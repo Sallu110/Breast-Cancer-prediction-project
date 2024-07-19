@@ -72,8 +72,17 @@ The models are evaluated using confusion matrix and accuracy score.
 cm = confusion_matrix(Y_test, R_predict)
 score = rfc.score(X_test, Y_test)
 
+![Screenshot 2024-07-18 165232](https://github.com/user-attachments/assets/ebe7a60a-5243-4776-9ae5-64d82be09cce)
+
+
 cm2 = confusion_matrix(Y_test, R_predict2)
 score2 = rfc2.score(X_test_pca, Y_test)
+
+![Screenshot 2024-07-18 165256](https://github.com/user-attachments/assets/957d60ad-93ae-4ae1-b333-b35db4b8ee91)
+
+![Screenshot 2024-07-18 170200](https://github.com/user-attachments/assets/0e79ff6b-2acb-45df-83e2-ee5ce1bede5d)
+
+
 
 # Conclusion
 This project demonstrates the use of Random Forest Classifier and PCA for breast cancer prediction. The results indicate the effectiveness of PCA in improving model performance. Future work can include testing other machine learning models and feature selection techniques to further enhance prediction accuracy.

@@ -2,7 +2,7 @@
 # Breast Cancer Prediction Project
 This project aims to predict breast cancer in patients based on various features using machine learning models. Specifically, the Random Forest Classifier is utilized along with Principal Component Analysis (PCA) for feature selection. The project includes data preprocessing, model training, and evaluation.
 
-# steps of project
+# "steps of project"
 Dataset
 Dependencies
 Implementation

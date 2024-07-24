@@ -5,12 +5,11 @@ This project aims to predict breast cancer in patients based on various features
 ## Steps of project
 1. Dataset
 2. Dependencies
-3. Implementation
-4. Loading the Dataset
-5. Data Preprocessing
-6. Feature selection
-7. Model Evaluation
-8. Conclusion
+3. Data Preprocessing
+4. Model training
+5. Feature selection
+6. Model Evaluation
+7. Conclusion
 
 ### dataset
 The dataset used in this project is the Breast Cancer Wisconsin (Diagnostic) dataset, which can be loaded directly from the sklearn.datasets module.
@@ -21,7 +20,7 @@ pandas
 numpy
 scikit-learn
 
-### implementation
+### Data preprocessing
 Loading the Dataset
 The dataset is loaded using the load_breast_cancer function from sklearn.datasets. The features and target variables are then extracted into separate DataFrames.
 ``` python
@@ -32,7 +31,6 @@ lbc = load_breast_cancer()
 X = pd.DataFrame(lbc['data'], columns=lbc['feature_names'])
 Y = pd.DataFrame(lbc['target'], columns=['type'])
 
-# Data Preprocessing
 # The dataset is split into training and testing sets using the train_test_split function. Data scaling is performed using StandardScaler.
 
 from sklearn.model_selection import train_test_split
@@ -41,12 +39,13 @@ from sklearn.preprocessing import StandardScaler
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=1234, stratify=Y)
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(X)
-
+```
+### Model training
+``` python
 # Random Forest Classifier
 # The Random Forest Classifier is trained on the training data, and predictions are made on the test data.
 
 from sklearn.ensemble import RandomForestClassifier
-
 rfc = RandomForestClassifier(random_state=1234)
 rfc.fit(X_train, Y_train)
 R_predict = rfc.predict(X_test)
